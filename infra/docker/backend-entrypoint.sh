@@ -3,6 +3,10 @@ set -e
 
 cd /var/www/backend
 
+if [ ! -f .env ]; then
+  printf 'APP_ENV=%s\nAPP_SECRET=%s\n' "${APP_ENV:-prod}" "${APP_SECRET:-change-me}" > .env
+fi
+
 wait_for_postgres() {
   until php -r '
     $url = getenv("DATABASE_URL");
@@ -54,9 +58,10 @@ chmod -R ug+rwX var
 wait_for_postgres
 
 php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration
+php bin/console doctrine:schema:update --force --complete 2>/dev/null || php bin/console doctrine:schema:update --force
 
 if users_table_is_empty; then
-  php bin/console doctrine:fixtures:load --no-interaction
+  APP_ENV=dev APP_DEBUG=0 php bin/console doctrine:fixtures:load --no-interaction
 fi
 
 php bin/console cache:clear --no-warmup

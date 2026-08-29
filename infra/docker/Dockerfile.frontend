@@ -11,11 +11,21 @@ EXPOSE 5173
 ENTRYPOINT ["/usr/local/bin/frontend-entrypoint.sh"]
 
 FROM base AS build
+ARG VITE_API_BASE_URL=
+ARG VITE_SITE_URL=
+ARG VITE_USD_TO_BYN_RATE=3.27
+ARG VITE_USD_TO_RUB_RATE=93
+ARG VITE_YANDEX_MAPS_API_KEY=
+ENV VITE_API_BASE_URL=$VITE_API_BASE_URL \
+    VITE_SITE_URL=$VITE_SITE_URL \
+    VITE_USD_TO_BYN_RATE=$VITE_USD_TO_BYN_RATE \
+    VITE_USD_TO_RUB_RATE=$VITE_USD_TO_RUB_RATE \
+    VITE_YANDEX_MAPS_API_KEY=$VITE_YANDEX_MAPS_API_KEY
 COPY apps/frontend/ .
 RUN npm run build
 
 FROM nginx:1.27-alpine AS prod
-COPY infra/docker/nginx/frontend.conf /etc/nginx/conf.d/default.conf
+COPY infra/docker/nginx/frontend.prod.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
