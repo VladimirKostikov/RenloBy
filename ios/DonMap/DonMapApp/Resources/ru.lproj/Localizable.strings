@@ -1,0 +1,16 @@
+"auth_email" = "Email";
+"auth_error" = "Неверный email или пароль";
+"auth_login_title" = "Вход";
+"auth_password" = "Пароль";
+"auth_submit" = "Войти";
+"app_name" = "Renlo";
+"app_tagline" = "Квартиры в Беларуси";
+"listing_loading" = "Загрузка…";
+"listing_no_results" = "Объявления не найдены";
+"map_hint" = "Интерактивная карта будет здесь";
+"map_placeholder" = "Карта";
+"nav_favorites" = "Избранное";
+"nav_login" = "Войти";
+"nav_rent" = "Аренда";
+"nav_sale" = "Продажа";
+"search_placeholder" = "Поиск по адресу, району, метро…";

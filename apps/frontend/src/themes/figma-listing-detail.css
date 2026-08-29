@@ -1,0 +1,18 @@
+.listing-detail-modal--page {
+  --listing-detail-section-gap: 24px;
+  --listing-detail-card-gap: 16px;
+  --listing-detail-gallery-height: 380px;
+}
+
+@media (max-width: 991px) {
+  .listing-detail-modal--page {
+    --listing-detail-gallery-height: 320px;
+  }
+}
+
+@media (max-width: 767px) {
+  .listing-detail-modal--page {
+    --listing-detail-section-gap: 20px;
+    --listing-detail-gallery-height: 260px;
+  }
+}

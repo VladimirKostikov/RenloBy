@@ -1,0 +1,38 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+button {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@supports not (color: color-mix(in srgb, red 50%, blue)) {
+  :root,
+  [data-theme='light'] {
+    --figma-filter-bg: rgba(225, 69, 84, 0.08);
+    --figma-filter-hover: rgba(255, 208, 213, 0.08);
+  }
+
+  [data-theme='dark'] {
+    --figma-filter-bg: rgba(225, 69, 84, 0.12);
+    --figma-filter-hover: rgba(225, 69, 84, 0.16);
+  }
+}
+
+.page-shell {
+  padding-left: max(var(--figma-page-padding-x), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--figma-page-padding-x), env(safe-area-inset-right, 0px));
+}

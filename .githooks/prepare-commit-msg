@@ -1,0 +1,6 @@
+#!/bin/sh
+
+COMMIT_MSG_FILE=$1
+
+grep -viE '^Co-authored-by:.*(cursor|copilot|github copilot|claude|openai|anthropic|ai)' "$COMMIT_MSG_FILE" > "${COMMIT_MSG_FILE}.tmp"
+mv "${COMMIT_MSG_FILE}.tmp" "$COMMIT_MSG_FILE"

@@ -1,0 +1,32 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: renlo
+
+resources:
+  - namespace.yaml
+  - configmap.yaml
+  - secret.yaml
+  - postgres-pvc.yaml
+  - postgres-deployment.yaml
+  - postgres-service.yaml
+  - zookeeper-statefulset.yaml
+  - zookeeper-service.yaml
+  - kafka-statefulset.yaml
+  - kafka-service.yaml
+  - backend-nginx-configmap.yaml
+  - backend-deployment.yaml
+  - backend-service.yaml
+  - frontend-deployment.yaml
+  - frontend-service.yaml
+  - ingress.yaml
+
+commonLabels:
+  app.kubernetes.io/name: renlo
+  app.kubernetes.io/part-of: renlo
+
+images:
+  - name: renlo/backend
+    newTag: latest
+  - name: renlo/frontend
+    newTag: latest

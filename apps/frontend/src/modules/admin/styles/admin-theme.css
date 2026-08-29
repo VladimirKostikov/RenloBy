@@ -1,0 +1,34 @@
+.admin-layout {
+  --admin-bg: #ffffff;
+  --admin-sidebar-bg: #ffffff;
+  --admin-border: #e8eaef;
+  --admin-text: #1a1d26;
+  --admin-text-muted: #6b7280;
+  --admin-accent: #e14554;
+  --admin-accent-hover: #c93a48;
+  --admin-accent-muted: rgba(225, 69, 84, 0.08);
+  --admin-row-hover: #f8f9fb;
+  --admin-shadow-sidebar: 4px 0 24px rgba(26, 29, 38, 0.06);
+  --admin-shadow-modal: 0 16px 48px rgba(26, 29, 38, 0.14);
+  --admin-radius: 10px;
+  --admin-radius-sm: 8px;
+  --admin-transition: 180ms ease;
+  --admin-transition-modal: 240ms ease;
+  color: var(--admin-text);
+  background: var(--admin-bg);
+  font-family: 'Open Sans', system-ui, sans-serif;
+}
+
+.admin-layout,
+.admin-layout * {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-layout *,
+  .admin-layout *::before,
+  .admin-layout *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

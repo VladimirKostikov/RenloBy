@@ -1,0 +1,56 @@
+{
+  "name": "renlo-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead",
+    "iOS >= 15",
+    "Safari >= 15",
+    "Chrome >= 100",
+    "Samsung >= 15"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build && tsx scripts/prerender-seo.ts",
+    "build:geo": "node scripts/geo/build-map-geo.mjs",
+    "fetch:geo": "node scripts/geo/build-map-geo.mjs --fetch-missing",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "vitest",
+    "test:run": "vitest run"
+  },
+  "dependencies": {
+    "@fontsource/open-sans": "^5.2.7",
+    "@unhead/vue": "^3.1.8",
+    "axios": "^1.18.1",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.13",
+    "vue-i18n": "^11.4.6",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@turf/area": "^7.3.5",
+    "@turf/boolean-overlap": "^7.3.5",
+    "@turf/centroid": "^7.3.5",
+    "@turf/distance": "^7.3.5",
+    "@turf/flatten": "^7.3.5",
+    "@turf/helpers": "^7.3.5",
+    "@turf/intersect": "^7.3.5",
+    "@turf/simplify": "^7.3.5",
+    "@turf/truncate": "^7.3.5",
+    "@turf/voronoi": "^7.3.5",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.4.6",
+    "autoprefixer": "^10.5.4",
+    "happy-dom": "^17.4.4",
+    "postcss": "^8.5.19",
+    "tsx": "^4.23.1",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "vitest": "^3.0.5",
+    "vue-tsc": "^2.2.0"
+  }
+}

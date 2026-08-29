@@ -1,0 +1,37 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+patches:
+  - target:
+      kind: Deployment
+      name: renlo-backend
+    patch: |
+      - op: replace
+        path: /spec/replicas
+        value: 1
+  - target:
+      kind: Deployment
+      name: renlo-frontend
+    patch: |
+      - op: replace
+        path: /spec/replicas
+        value: 1
+  - target:
+      kind: ConfigMap
+      name: renlo-config
+    patch: |
+      - op: replace
+        path: /data/APP_ENV
+        value: dev
+      - op: replace
+        path: /data/CORS_ALLOW_ORIGIN
+        value: '^https?://(localhost|127\.0\.0\.1|10(\.\d{1,3}){3}|192\.168(\.\d{1,3}){2}|172\.(1[6-9]|2\d|3[0-1])(\.\d{1,3}){2}|renlo\.local)(:[0-9]+)?$'
+
+images:
+  - name: renlo/backend
+    newTag: dev
+  - name: renlo/frontend
+    newTag: dev

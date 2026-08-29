@@ -1,0 +1,39 @@
+{
+  "regions": [
+    { "slug": "brest", "name": "Брестская область", "geoboundariesName": "Brest" },
+    { "slug": "vitebsk", "name": "Витебская область", "geoboundariesName": "Vitebsk" },
+    { "slug": "gomel", "name": "Гомельская область", "geoboundariesName": "Gomel" },
+    { "slug": "grodno", "name": "Гродненская область", "geoboundariesName": "Grodno" },
+    { "slug": "mogilev", "name": "Могилёвская область", "geoboundariesName": "Mogilev" },
+    { "slug": "minsk-region", "name": "Минская область", "geoboundariesName": "Minsk" },
+    { "slug": "minsk-city", "name": "г. Минск", "geoboundariesName": "Minsk City", "citySlug": "minsk" }
+  ],
+  "cities": [
+    { "slug": "minsk", "name": "Минск", "regionSlug": "minsk-city", "citySlug": "minsk", "hasDistricts": true, "osmFile": "minsk.json", "relationId": 59195, "maxSpan": 0.5 },
+    { "slug": "borisov", "name": "Борисов", "regionSlug": "minsk-region", "osmFile": "borisov.json", "relationId": 1749244 },
+    { "slug": "soligorsk", "name": "Солигорск", "regionSlug": "minsk-region", "osmFile": "soligorsk.json", "relationId": 6722606 },
+    { "slug": "molodechno", "name": "Молодечно", "regionSlug": "minsk-region", "osmFile": "molodechno.json", "relationId": 6722552 },
+    { "slug": "brest-city", "name": "Брест", "regionSlug": "brest", "osmFile": "brest-city.json", "relationId": 72615 },
+    { "slug": "vitebsk-city", "name": "Витебск", "regionSlug": "vitebsk", "osmFile": "vitebsk-city.json", "relationId": 6825777 },
+    { "slug": "gomel-city", "name": "Гомель", "regionSlug": "gomel", "osmFile": "gomel-city.json", "relationId": 163244 },
+    { "slug": "grodno-city", "name": "Гродно", "regionSlug": "grodno", "osmFile": "grodno-city.json", "relationId": 130921 },
+    { "slug": "mogilev-city", "name": "Могилёв", "regionSlug": "mogilev", "osmFile": "mogilev-city.json", "relationId": 62145 }
+  ],
+  "districtSets": [
+    {
+      "citySlug": "minsk",
+      "outputFile": "minsk-districts.geojson",
+      "districts": [
+        { "slug": "centralny", "name": "Центральный", "districtSlug": "centralny", "osmFile": "district-centralny.json", "relationId": 59249 },
+        { "slug": "sovetsky", "name": "Советский", "districtSlug": "sovetsky", "osmFile": "district-sovetsky.json", "relationId": 59250 },
+        { "slug": "pervomaysky", "name": "Первомайский", "districtSlug": "pervomaysky", "osmFile": "district-pervomaysky.json", "relationId": 59252 },
+        { "slug": "partizansky", "name": "Партизанский", "districtSlug": "partizansky", "osmFile": "district-partizansky.json", "relationId": 59257 },
+        { "slug": "zavodskoy", "name": "Заводской", "districtSlug": "zavodskoy", "osmFile": "district-zavodskoy.json", "relationId": 59209 },
+        { "slug": "leninsky", "name": "Ленинский", "districtSlug": "leninsky", "osmFile": "district-leninsky.json", "relationId": 59202 },
+        { "slug": "oktyabrsky", "name": "Октябрьский", "districtSlug": "oktyabrsky", "osmFile": "district-oktyabrsky.json", "relationId": 59199 },
+        { "slug": "moskovsky", "name": "Московский", "districtSlug": "moskovsky", "osmFile": "district-moskovsky.json", "relationId": 59208 },
+        { "slug": "frunzensky", "name": "Фрунзенский", "districtSlug": "frunzensky", "osmFile": "district-frunzensky.json", "relationId": 59246 }
+      ]
+    }
+  ]
+}

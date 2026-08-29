@@ -1,0 +1,135 @@
+.filter-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: var(--figma-filter-chip-height);
+  border: 1px solid var(--figma-border);
+  border-radius: var(--figma-radius-chip);
+  background: var(--figma-surface);
+  color: var(--figma-ink);
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.filter-chip:hover {
+  border-color: var(--figma-chip-border-hover);
+  background: var(--figma-filter-hover);
+}
+
+.filter-chip:active {
+  transform: scale(0.985);
+}
+
+.filter-chip--filters {
+  gap: 7px;
+  width: auto;
+  min-width: 143px;
+  padding: 0 14px;
+  font-size: var(--figma-filter-value-size);
+  font-weight: 600;
+}
+
+.filter-chip__icon {
+  flex-shrink: 0;
+}
+
+.filter-chip__title {
+  line-height: 1;
+}
+
+.filter-chip__badge {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--figma-accent);
+  color: var(--figma-on-accent);
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: auto;
+}
+
+.filter-chip--selector {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5px 28px 5px 12px;
+  gap: 1px;
+}
+
+.filter-chip--object-type {
+  width: 120px;
+}
+
+.filter-chip--region {
+  width: 158px;
+}
+
+.filter-chip--city,
+.filter-chip--rooms {
+  width: 98px;
+}
+
+.filter-chip--district,
+.filter-chip--price {
+  width: 133px;
+}
+
+.filter-chip--area {
+  width: 113px;
+}
+
+.filter-chip--no-chevron {
+  padding-right: 12px;
+}
+
+.filter-chip--more {
+  width: 143px;
+  justify-content: center;
+  padding: 0 14px;
+  font-size: var(--figma-filter-value-size);
+  font-weight: 600;
+}
+
+.filter-chip__label {
+  font-size: var(--figma-filter-label-size);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--figma-ink);
+}
+
+.filter-chip__value {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: var(--figma-filter-value-size);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.filter-chip__chevron {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  width: 8px;
+  height: 16px;
+  transform: rotate(90deg);
+  pointer-events: none;
+}
+
+.filter-chip__control {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+}

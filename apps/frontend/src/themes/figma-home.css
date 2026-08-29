@@ -1,0 +1,27 @@
+:root {
+  --figma-accent: var(--palette-primary, #e14554);
+  --figma-accent-hover: var(--palette-primary-hover, #c93a48);
+  --figma-header-height: 88px;
+  --figma-filter-chip-height: 43px;
+  --figma-filter-label-size: 10px;
+  --figma-filter-value-size: 14px;
+  --figma-filter-chip-gap: 15px;
+  --figma-radius-chip: 10px;
+  --figma-radius-btn: 5px;
+  --figma-list-width: 481px;
+  --figma-map-min-height: 618px;
+  --figma-page-max-width: 1440px;
+  --figma-page-padding-x: 22px;
+  --figma-catalog-card-radius: 20px;
+  --figma-catalog-card-padding: 24px;
+  --figma-catalog-image-height: 300px;
+  --figma-catalog-image-radius: 15px;
+}
+
+.page-shell {
+  width: 100%;
+  max-width: var(--figma-page-max-width);
+  margin: 0 auto;
+  padding-left: var(--figma-page-padding-x);
+  padding-right: var(--figma-page-padding-x);
+}

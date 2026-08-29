@@ -1,0 +1,53 @@
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  --color-bg: #f5f6f8;
+  --color-bg-elevated: #ffffff;
+  --color-bg-muted: #eef0f4;
+  --color-border: #e2e5eb;
+  --color-text: #1a1d26;
+  --color-text-muted: #6b7280;
+  --color-primary: var(--palette-primary, #e14554);
+  --color-primary-hover: var(--palette-primary-hover, #c93a48);
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-map-bg: #dbeafe;
+  --color-danger: #b91c1c;
+  --color-danger-bg: #fef2f2;
+  --color-overlay: rgba(0, 0, 0, 0.45);
+  --color-shadow: rgba(0, 0, 0, 0.1);
+
+  --figma-page-bg: #f6f6f8;
+  --figma-surface: #ffffff;
+  --figma-surface-muted: #f7f7f8;
+  --figma-surface-glass: rgba(255, 255, 255, 0.92);
+  --figma-surface-glass-soft: rgba(255, 255, 255, 0.78);
+  --figma-success-bg: #ecfdf5;
+  --figma-info-bg: #eff6ff;
+  --figma-warning-bg: #fff7ed;
+  --figma-ink: #000000;
+  --figma-ink-secondary: #111111;
+  --figma-ink-muted: rgba(0, 0, 0, 0.78);
+  --figma-border: rgba(146, 146, 146, 0.1);
+  --figma-border-strong: #e5e7eb;
+  --figma-border-input: #b5b5b5;
+  --figma-search-border: #b5b5b5;
+  --figma-filter-bg: rgba(225, 69, 84, 0.08);
+  --figma-filter-bg: color-mix(in srgb, var(--figma-accent) 8%, transparent);
+  --figma-filter-hover: rgba(255, 208, 213, 0.08);
+  --figma-filter-hover: color-mix(in srgb, var(--figma-accent) 8%, transparent);
+  --figma-mix-base: #ffffff;
+  --figma-on-accent: #ffffff;
+  --figma-text-muted: rgba(0, 0, 0, 0.78);
+  --figma-verified-bg: #c6f5d4;
+  --figma-verified-text: #04832a;
+  --figma-placeholder: #d9d9d9;
+  --figma-gray-soft: #c4c4c4;
+  --figma-gray-mid: #848484;
+  --figma-gray-strong: #505050;
+  --figma-chip-border-hover: rgba(146, 146, 146, 0.22);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.18);
+}

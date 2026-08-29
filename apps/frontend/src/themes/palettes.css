@@ -1,0 +1,79 @@
+[data-palette='default'] {
+  --palette-primary: #e14554;
+  --palette-primary-hover: #c93a48;
+}
+
+[data-palette='ocean'] {
+  --palette-primary: #0891b2;
+  --palette-primary-hover: #0e7490;
+}
+
+[data-palette='forest'] {
+  --palette-primary: #059669;
+  --palette-primary-hover: #047857;
+}
+
+[data-palette='slate'] {
+  --palette-primary: #475569;
+  --palette-primary-hover: #334155;
+}
+
+[data-palette='amber'] {
+  --palette-primary: #d97706;
+  --palette-primary-hover: #b45309;
+}
+
+[data-palette='teal'] {
+  --palette-primary: #0d9488;
+  --palette-primary-hover: #0f766e;
+}
+
+[data-palette='berry'] {
+  --palette-primary: #be185d;
+  --palette-primary-hover: #9d174d;
+}
+
+[data-palette='indigo'] {
+  --palette-primary: #4f46e5;
+  --palette-primary-hover: #4338ca;
+}
+
+[data-palette='clay'] {
+  --palette-primary: #c2410c;
+  --palette-primary-hover: #9a3412;
+}
+
+[data-palette='orchid'] {
+  --palette-primary: #a21caf;
+  --palette-primary-hover: #86198f;
+}
+
+[data-palette='sky'] {
+  --palette-primary: #0284c7;
+  --palette-primary-hover: #0369a1;
+}
+
+[data-palette='navy'] {
+  --palette-primary: #1d4ed8;
+  --palette-primary-hover: #1e40af;
+}
+
+[data-palette='lime'] {
+  --palette-primary: #65a30d;
+  --palette-primary-hover: #4d7c0f;
+}
+
+[data-palette='wine'] {
+  --palette-primary: #9f1239;
+  --palette-primary-hover: #881337;
+}
+
+[data-palette='sand'] {
+  --palette-primary: #ca8a04;
+  --palette-primary-hover: #a16207;
+}
+
+[data-palette='pine'] {
+  --palette-primary: #166534;
+  --palette-primary-hover: #14532d;
+}

@@ -1,0 +1,81 @@
+security:
+    password_hashers:
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+    providers:
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        api_login:
+            pattern: ^/api/auth/login$
+            stateless: true
+            provider: app_user_provider
+            user_checker: App\Security\UserChecker
+            json_login:
+                check_path: /api/auth/login
+                username_path: email
+                password_path: password
+                success_handler: App\Security\LoginSuccessHandler
+                failure_handler: App\Security\LoginFailureHandler
+        api:
+            pattern: ^/api
+            stateless: true
+            provider: app_user_provider
+            user_checker: App\Security\UserChecker
+            custom_authenticators:
+                - App\Security\CookieTokenAuthenticator
+        admin:
+            pattern: ^/admin
+            stateless: true
+            provider: app_user_provider
+            user_checker: App\Security\UserChecker
+            custom_authenticators:
+                - App\Security\CookieTokenAuthenticator
+        seo:
+            pattern: ^/(robots\.txt|sitemap\.xml)$
+            security: false
+    access_control:
+        - { path: ^/robots\.txt$, roles: PUBLIC_ACCESS }
+        - { path: ^/sitemap\.xml$, roles: PUBLIC_ACCESS }
+        - { path: ^/api/health, roles: PUBLIC_ACCESS }
+        - { path: ^/api/auth/login, roles: PUBLIC_ACCESS }
+        - { path: ^/api/auth/register, roles: PUBLIC_ACCESS }
+        - { path: ^/api/listings, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/sellers, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/cities, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/districts, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/metro-stations, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/map/stats, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/infrastructure/pois, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/info-pages, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/articles, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/seo-meta, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/tariffs, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/site-settings, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/exchange-rates, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/head-snippets, roles: PUBLIC_ACCESS, methods: [GET] }
+        - { path: ^/api/payments/yookassa/webhook, roles: PUBLIC_ACCESS, methods: [POST] }
+        - { path: ^/api/telegram/webhook, roles: PUBLIC_ACCESS, methods: [POST] }
+        - { path: ^/api/listings/\d+/reports$, roles: PUBLIC_ACCESS, methods: [POST] }
+        - { path: ^/api/listings/\d+/requests$, roles: PUBLIC_ACCESS, methods: [POST] }
+        - { path: ^/api/listings/\d+/events/contact$, roles: PUBLIC_ACCESS, methods: [POST] }
+        - { path: ^/api/auth/logout, roles: PUBLIC_ACCESS }
+        - { path: ^/api/favorites, roles: PUBLIC_ACCESS }
+        - { path: ^/api/comparisons, roles: PUBLIC_ACCESS }
+        - { path: ^/api/ai-preferences, roles: PUBLIC_ACCESS }
+        - { path: ^/api/ai-chat, roles: PUBLIC_ACCESS, methods: [POST] }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
+
+when@test:
+    security:
+        password_hashers:
+            Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
+                algorithm: auto
+                cost: 4
+                time_cost: 3
+                memory_cost: 10

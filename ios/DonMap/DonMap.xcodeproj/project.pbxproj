@@ -1,0 +1,281 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A100000100000001 /* DonMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000100000001 /* DonMapApp.swift */; };
+		A100000200000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000200000001 /* ContentView.swift */; };
+		A100000300000001 /* LocaleStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000300000001 /* LocaleStrings.swift */; };
+		A100000400000001 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A200000400000001 /* Localizable.strings */; };
+		A100000500000001 /* ru.json in Resources */ = {isa = PBXBuildFile; fileRef = A200000500000001 /* ru.json */; };
+		A100000600000001 /* DonMapCore in Frameworks */ = {isa = PBXBuildFile; productRef = A500000100000001 /* DonMapCore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A200000100000001 /* DonMapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonMapApp.swift; sourceTree = "<group>"; };
+		A200000200000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A200000300000001 /* LocaleStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleStrings.swift; sourceTree = "<group>"; };
+		A200000400000001 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A200000500000001 /* ru.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ru.json; sourceTree = "<group>"; };
+		A200000600000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A300000100000001 /* DonMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A400000100000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100000600000001 /* DonMapCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A600000100000001 = {
+			isa = PBXGroup;
+			children = (
+				A600000200000001 /* DonMapApp */,
+				A600000300000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A600000200000001 /* DonMapApp */ = {
+			isa = PBXGroup;
+			children = (
+				A200000100000001 /* DonMapApp.swift */,
+				A200000200000001 /* ContentView.swift */,
+				A200000300000001 /* LocaleStrings.swift */,
+				A600000400000001 /* Resources */,
+				A200000600000001 /* Info.plist */,
+			);
+			path = DonMapApp;
+			sourceTree = "<group>";
+		};
+		A600000300000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A300000100000001 /* DonMap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A600000400000001 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A200000400000001 /* Localizable.strings */,
+				A600000500000001 /* locales */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A600000500000001 /* locales */ = {
+			isa = PBXGroup;
+			children = (
+				A200000500000001 /* ru.json */,
+			);
+			path = locales;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A700000100000001 /* DonMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A900000100000001 /* Build configuration list for PBXNativeTarget "DonMap" */;
+			buildPhases = (
+				A800000100000001 /* Sources */,
+				A400000100000001 /* Frameworks */,
+				A800000200000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DonMap;
+			packageProductDependencies = (
+				A500000100000001 /* DonMapCore */,
+			);
+			productName = DonMap;
+			productReference = A300000100000001 /* DonMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA00000100000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = A900000200000001 /* Build configuration list for PBXProject "DonMap" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = ru;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				ru,
+				Base,
+			);
+			mainGroup = A600000100000001;
+			packageReferences = (
+				A500000200000001 /* XCLocalSwiftPackageReference "DonMap" */,
+			);
+			productRefGroup = A600000300000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A700000100000001 /* DonMap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A800000200000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100000400000001 /* Localizable.strings in Resources */,
+				A100000500000001 /* ru.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A800000100000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100000100000001 /* DonMapApp.swift in Sources */,
+				A100000200000001 /* ContentView.swift in Sources */,
+				A100000300000001 /* LocaleStrings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AB00000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AB00000200000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB00000300000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DonMapApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = by.donmap.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB00000400000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DonMapApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = by.donmap.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A900000100000001 /* Build configuration list for PBXNativeTarget "DonMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB00000300000001 /* Debug */,
+				AB00000400000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A900000200000001 /* Build configuration list for PBXProject "DonMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB00000100000001 /* Debug */,
+				AB00000200000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A500000200000001 /* XCLocalSwiftPackageReference "DonMap" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = .;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A500000100000001 /* DonMapCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A500000200000001 /* XCLocalSwiftPackageReference "DonMap" */;
+			productName = DonMapCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = AA00000100000001 /* Project object */;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/svg+xml" href="/figma/logomark.svg" />
+    <link rel="icon" type="image/png" href="/figma/logomark.png" />
+    <link rel="apple-touch-icon" href="/figma/logomark.png" />
+    <title>Renlo</title>
+    <meta name="description" content="Покупка, продажа и аренда квартир в Беларуси." />
+    <meta name="robots" content="index,follow" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('renlo-theme')
+          var mode =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
+          document.documentElement.setAttribute('data-theme', mode)
+          var palette = localStorage.getItem('renlo-palette')
+          if (palette) {
+            document.documentElement.setAttribute('data-palette', palette)
+          }
+          var meta = document.querySelector('meta[name="theme-color"]')
+          if (meta) {
+            meta.setAttribute('content', mode === 'dark' ? '#0f1117' : '#ffffff')
+          }
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

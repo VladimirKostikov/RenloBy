@@ -1,0 +1,7 @@
+[data-theme='dark'] img[data-theme-ink] {
+  filter: brightness(0) invert(0.93);
+}
+
+[data-theme='dark'] img[data-theme-ink-muted] {
+  filter: brightness(0) invert(0.72);
+}

@@ -1,0 +1,106 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+parameters:
+    google_places_api_key_default: ''
+    yandex_geosearch_api_key_default: ''
+    deepseek_api_key_default: ''
+    app.site_url_default: 'https://renlo.by'
+    app.site_url: '%env(default:app.site_url_default:SITE_URL)%'
+    telegram_bot_token_default: ''
+    telegram_bot_username_default: 'renlo_bot'
+    telegram_webhook_secret_default: ''
+    yookassa_shop_id_default: ''
+    yookassa_secret_key_default: ''
+    fx_usd_byn_default: '3.27'
+    fx_usd_rub_default: '93'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Dto/'
+            - '../src/Kernel.php'
+
+    App\Service\AuthCookieService:
+        arguments:
+            $appSecret: '%env(APP_SECRET)%'
+            $appEnv: '%kernel.environment%'
+
+    App\Service\GuestSessionCookieService:
+        arguments:
+            $appSecret: '%env(APP_SECRET)%'
+            $appEnv: '%kernel.environment%'
+
+    App\Service\GooglePlacesInfrastructureProvider:
+        arguments:
+            $apiKey: '%env(default:google_places_api_key_default:GOOGLE_PLACES_API_KEY)%'
+
+    App\Service\YandexPlacesInfrastructureProvider:
+        arguments:
+            $apiKey: '%env(default:yandex_geosearch_api_key_default:YANDEX_GEOSEARCH_API_KEY)%'
+
+    App\Service\SitemapService:
+        arguments:
+            $siteUrl: '%app.site_url%'
+
+    App\Service\RobotsTxtService:
+        arguments:
+            $siteUrl: '%app.site_url%'
+
+    App\Service\MediaUploadService:
+        arguments:
+            $projectDir: '%kernel.project_dir%'
+
+    App\Service\MediaFileService:
+        arguments:
+            $projectDir: '%kernel.project_dir%'
+
+    App\Telegram\TelegramBotClientInterface: '@App\Telegram\HttpTelegramBotClient'
+
+    App\Telegram\HttpTelegramBotClient:
+        arguments:
+            $botToken: '%env(default:telegram_bot_token_default:TELEGRAM_BOT_TOKEN)%'
+
+    App\Ai\DeepSeekChatClient:
+        arguments:
+            $apiKey: '%env(default:deepseek_api_key_default:DEEPSEEK_API_KEY)%'
+
+    App\Service\TelegramNotificationService:
+        arguments:
+            $botUsername: '%env(default:telegram_bot_username_default:TELEGRAM_BOT_USERNAME)%'
+
+    App\Service\TelegramWebhookGuard:
+        arguments:
+            $webhookSecret: '%env(default:telegram_webhook_secret_default:TELEGRAM_WEBHOOK_SECRET)%'
+            $appEnv: '%kernel.environment%'
+
+    App\Service\SellerTelegramService:
+        arguments:
+            $botUsername: '%env(default:telegram_bot_username_default:TELEGRAM_BOT_USERNAME)%'
+            $appSecret: '%env(APP_SECRET)%'
+
+    App\Service\CurrencyConverter:
+        arguments:
+            $usdToByn: '%env(default:fx_usd_byn_default:FX_USD_BYN)%'
+            $usdToRub: '%env(default:fx_usd_rub_default:FX_USD_RUB)%'
+
+    App\Service\ExchangeRateService:
+        arguments:
+            $usdToByn: '%env(default:fx_usd_byn_default:FX_USD_BYN)%'
+            $usdToRub: '%env(default:fx_usd_rub_default:FX_USD_RUB)%'
+
+    App\Payment\YooKassa\HttpYooKassaClient:
+        arguments:
+            $shopId: '%env(default:yookassa_shop_id_default:YOOKASSA_SHOP_ID)%'
+            $secretKey: '%env(default:yookassa_secret_key_default:YOOKASSA_SECRET_KEY)%'
+
+    App\Payment\YooKassa\YooKassaClientInterface: '@App\Payment\YooKassa\ConfigurableYooKassaClient'

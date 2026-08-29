@@ -1,0 +1,46 @@
+name: renlo
+description: Renlo apartment aggregator stack
+
+compose:
+  file: ../../infra/docker/docker-compose.yml
+  envFile: ../../.env
+
+services:
+  - id: proxy
+    label: Renlo Proxy
+    port: 8080
+    healthcheck: http://localhost:8080/
+  - id: backend
+    label: Symfony Backend
+    dependsOn: [postgres, kafka]
+  - id: frontend
+    label: Vue Frontend
+    dependsOn: [backend]
+  - id: postgres
+    label: PostgreSQL
+  - id: kafka
+    label: Kafka
+    dependsOn: [zookeeper]
+  - id: zookeeper
+    label: Zookeeper
+  - id: grafana
+    label: Grafana
+    port: 3000
+
+build:
+  backend:
+    context: ../..
+    dockerfile: infra/docker/Dockerfile.backend
+    image: renlo/backend
+  frontend:
+    context: ../..
+    dockerfile: infra/docker/Dockerfile.frontend
+    target: prod
+    image: renlo/frontend
+
+deploy:
+  kubernetes:
+    base: ../../infra/kubernetes/base
+    overlays:
+      dev: ../../infra/kubernetes/overlays/dev
+      prod: ../../infra/kubernetes/overlays/prod

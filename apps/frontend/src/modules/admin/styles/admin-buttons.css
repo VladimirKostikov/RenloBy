@@ -1,0 +1,45 @@
+.admin-btn-primary {
+  min-height: 42px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 8px;
+  background: var(--admin-accent, #e14554);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.admin-btn-primary:hover {
+  background: var(--admin-accent-hover, #c93a48);
+}
+
+.admin-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.admin-btn-secondary {
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid var(--admin-border, #e8eaef);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--admin-text, #1a1d26);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.admin-btn-secondary:hover {
+  background: var(--admin-row-hover, #f8f9fb);
+}
+
+.admin-btn-secondary:active {
+  transform: scale(0.98);
+}
+
+.admin-btn-primary:disabled,
+.admin-btn-secondary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

@@ -1,0 +1,25 @@
+:root {
+  --figma-catalog-sidebar-width: 391px;
+  --figma-catalog-card-radius: 20px;
+  --figma-catalog-image-radius: 15px;
+  --figma-catalog-tab-height: 32px;
+  --figma-catalog-grid-gap: 24px;
+  --figma-catalog-filter-sticky-top: 16px;
+}
+
+.catalog-page {
+  --figma-catalog-filter-sticky-top: 112px;
+}
+
+.catalog-layout {
+  align-items: start;
+}
+
+@media (min-width: 1280px) {
+  .catalog-layout__sidebar {
+    position: sticky;
+    top: var(--figma-catalog-filter-sticky-top, 16px);
+    align-self: start;
+    z-index: 20;
+  }
+}

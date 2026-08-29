@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Renlo</string>
+    <string name="tagline">Квартиры в Беларуси</string>
+    <string name="nav_sale">Продажа</string>
+    <string name="nav_rent">Аренда</string>
+    <string name="nav_favorites">Избранное</string>
+    <string name="nav_login">Войти</string>
+    <string name="search_placeholder">Поиск по адресу, району, метро…</string>
+    <string name="listing_no_results">Объявления не найдены</string>
+    <string name="listing_loading">Загрузка…</string>
+    <string name="map_placeholder">Карта</string>
+    <string name="map_hint">Интерактивная карта будет здесь</string>
+    <string name="auth_login_title">Вход</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_password">Пароль</string>
+    <string name="auth_submit">Войти</string>
+    <string name="auth_error">Неверный email или пароль</string>
+</resources>

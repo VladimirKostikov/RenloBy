@@ -1,0 +1,11 @@
+{
+  "project": "Renlo",
+  "figmaFileKey": "AHHrPf3ZyGkYOptjvKi2Uk",
+  "figmaFileName": "DomMap",
+  "figmaUrl": "https://www.figma.com/design/AHHrPf3ZyGkYOptjvKi2Uk/DomMap",
+  "mcpServer": "plugin-figma-figma",
+  "fontFamily": "Open Sans",
+  "themes": ["light", "dark"],
+  "defaultLocale": "ru",
+  "locales": ["ru", "en", "be"]
+}

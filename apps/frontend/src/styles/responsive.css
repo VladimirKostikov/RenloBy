@@ -1,0 +1,48 @@
+:root {
+  --bp-mobile-max: 767px;
+  --bp-tablet-min: 768px;
+  --bp-tablet-max: 1279px;
+  --bp-desktop-min: 1280px;
+  --touch-target-min: 44px;
+}
+
+html {
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --figma-page-padding-x: 20px;
+    --figma-list-width: 100%;
+    --figma-map-min-height: 280px;
+    --figma-filter-chip-height: 44px;
+    --figma-header-height: 72px;
+    --figma-catalog-card-padding: 16px;
+    --figma-catalog-image-height: min(56vw, 260px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  :root {
+    --figma-list-width: 100%;
+    --figma-map-min-height: 360px;
+    --figma-page-padding-x: 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --figma-list-width: 481px;
+    --figma-map-min-height: 618px;
+  }
+}
+
+.page-shell {
+  padding-left: max(var(--figma-page-padding-x), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--figma-page-padding-x), env(safe-area-inset-right, 0px));
+}

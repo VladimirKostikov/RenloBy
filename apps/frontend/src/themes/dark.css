@@ -1,0 +1,52 @@
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-bg: #14161d;
+  --color-bg-elevated: #22262f;
+  --color-bg-muted: #2c313c;
+  --color-border: #3a4050;
+  --color-text: #f5f6f8;
+  --color-text-muted: #b0b6c2;
+  --color-primary: var(--palette-primary, #e14554);
+  --color-primary-hover: var(--palette-primary-hover, #c93a48);
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-map-bg: #1e293b;
+  --color-danger: #f87171;
+  --color-danger-bg: rgba(185, 28, 28, 0.22);
+  --color-overlay: rgba(0, 0, 0, 0.6);
+  --color-shadow: rgba(0, 0, 0, 0.4);
+
+  --figma-page-bg: #14161d;
+  --figma-surface: #22262f;
+  --figma-surface-muted: #2c313c;
+  --figma-surface-glass: rgba(34, 38, 47, 0.94);
+  --figma-surface-glass-soft: rgba(34, 38, 47, 0.82);
+  --figma-success-bg: rgba(34, 197, 94, 0.18);
+  --figma-info-bg: rgba(59, 130, 246, 0.18);
+  --figma-warning-bg: rgba(245, 158, 11, 0.18);
+  --figma-ink: #f5f6f8;
+  --figma-ink-secondary: #e8eaef;
+  --figma-ink-muted: rgba(245, 246, 248, 0.78);
+  --figma-border: rgba(255, 255, 255, 0.14);
+  --figma-border-strong: #3a4050;
+  --figma-border-input: #4a5162;
+  --figma-search-border: #4a5162;
+  --figma-filter-bg: rgba(225, 69, 84, 0.16);
+  --figma-filter-bg: color-mix(in srgb, var(--figma-accent) 16%, transparent);
+  --figma-filter-hover: rgba(225, 69, 84, 0.22);
+  --figma-filter-hover: color-mix(in srgb, var(--figma-accent) 22%, transparent);
+  --figma-mix-base: #22262f;
+  --figma-on-accent: #ffffff;
+  --figma-text-muted: rgba(245, 246, 248, 0.78);
+  --figma-verified-bg: #1b4332;
+  --figma-verified-text: #6ee7a0;
+  --figma-placeholder: #3f4554;
+  --figma-gray-soft: #6b7384;
+  --figma-gray-mid: #b0b6c2;
+  --figma-gray-strong: #d7dbe3;
+  --figma-chip-border-hover: rgba(255, 255, 255, 0.22);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.55);
+}
