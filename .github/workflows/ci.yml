@@ -43,13 +43,13 @@ jobs:
         run: php bin/console doctrine:schema:validate --skip-sync || true
         env:
           APP_ENV: test
-          DATABASE_URL: sqlite:///:memory:
+          DATABASE_URL: 'sqlite:///:memory:'
 
       - name: Run PHPUnit
         run: php bin/phpunit
         env:
           APP_ENV: test
-          DATABASE_URL: sqlite:///:memory:
+          DATABASE_URL: 'sqlite:///:memory:'
 
   frontend:
     runs-on: ubuntu-latest
