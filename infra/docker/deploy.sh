@@ -30,7 +30,21 @@ for i in $(seq 1 60); do
 done
 
 echo "[deploy] health check"
-curl -fkSs https://127.0.0.1/api/health >/dev/null
+ok=0
+for i in $(seq 1 30); do
+  if curl -fkSs https://127.0.0.1/api/health >/dev/null 2>&1; then
+    ok=1
+    break
+  fi
+  sleep 2
+done
+if [ "$ok" != "1" ]; then
+  echo "[deploy] health check failed" >&2
+  "${COMPOSE[@]}" ps >&2 || true
+  docker logs --tail 40 renlo-proxy-1 >&2 || true
+  docker logs --tail 40 renlo-backend-1 >&2 || true
+  exit 1
+fi
 
 echo "[deploy] done"
 "${COMPOSE[@]}" ps
