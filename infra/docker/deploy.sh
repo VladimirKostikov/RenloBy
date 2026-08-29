@@ -18,6 +18,7 @@ echo "[deploy] building images"
 "${COMPOSE[@]}" build backend frontend
 
 echo "[deploy] restarting stack"
+"${COMPOSE[@]}" up -d --remove-orphans --force-recreate proxy
 "${COMPOSE[@]}" up -d --remove-orphans
 
 echo "[deploy] waiting for backend"

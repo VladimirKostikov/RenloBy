@@ -149,7 +149,7 @@ services:
       - ./nginx/proxy.prod.conf:/etc/nginx/conf.d/default.conf:ro
       - ./ssl:/etc/nginx/ssl:ro
     healthcheck:
-      test: ['CMD-SHELL', 'wget -qO- http://127.0.0.1/ > /dev/null || exit 1']
+      test: ['CMD-SHELL', 'wget -qO- http://backend:80/api/health | grep -q ok']
       interval: 10s
       timeout: 5s
       retries: 6
