@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 cd "$ROOT"
 
-COMPOSE=(docker compose -f infra/docker/docker-compose.prod.yml --env-file .env)
+COMPOSE=(docker compose -f infra/docker/docker-compose.prod.yml --env-file "$ROOT/.env")
 
 echo "[deploy] pulling code"
 if [ -d .git ]; then
