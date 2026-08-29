@@ -4,6 +4,8 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 cd "$ROOT"
 
+git config --global --add safe.directory "$ROOT" 2>/dev/null || true
+
 COMPOSE=(docker compose -f infra/docker/docker-compose.prod.yml --env-file "$ROOT/.env")
 
 echo "[deploy] pulling code"
